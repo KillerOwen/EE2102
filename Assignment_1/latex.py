@@ -16,6 +16,8 @@ value = nt[0]*m[0] + nt[1]*m[1]
 print("Value of n^T.m = ",value)
 
 #calculation of constant we get on multiplying n^T and A
+nt = nt*2
+#the above step is done to cancel out the factor of 1/2 on both sides of equation
 
 const = nt[0]*A[0] + nt[1]*A[1]
 print("Value of n^T.A = ",const)
