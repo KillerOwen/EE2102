@@ -9,11 +9,6 @@ m = D-A
 print("m = ",m)
 
 nt = np.array([m[1],-m[0]])
-print("n^T = ",nt)
-
-#proof for nt.m = 0
-value = nt[0]*m[0] + nt[1]*m[1] 
-print("Value of n^T.m = ",value)
 
 #calculation of constant we get on multiplying n^T and A
 nt = nt*2
