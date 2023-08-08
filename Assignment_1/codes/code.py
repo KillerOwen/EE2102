@@ -8,7 +8,7 @@ print("Mid point of BC(D) is : ",D)
 m = D-A
 print("m = ",m)
 
-nt = np.array([m[1],-m[0]])
+nt = np.array([m[1]*1+m[0]*0,m[0]*-1+m[1]*0])
 
 #calculation of constant we get on multiplying n^T and A
 nt = nt*2
