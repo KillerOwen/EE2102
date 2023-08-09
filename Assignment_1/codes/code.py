@@ -77,8 +77,7 @@ nt = np.array([m[1]*1+m[0]*0,m[0]*-1+m[1]*0])
 nt = nt*2
 #the above step is done to cancel out the factor of 1/2 on both sides of equation
 
-multiply = nt*A
-const = multiply[0]+multiply[1]
+const = nt@A
 print("Value of n^T.A = ",const)
 
 #calculation code ends here
