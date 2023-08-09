@@ -45,7 +45,9 @@ x_AB = line_gen(A,D)
 plt.plot(x_AB[0,:],x_AB[1,:],label='$AD$')
 
 #Labeling the coordinates
-tri_coords = np.vstack((A,D)).T
+A = A.reshape(-1,1)
+D = D.reshape(-1,1)
+tri_coords = np.block([[A,D]])
 plt.scatter(tri_coords[0,:], tri_coords[1,:])
 vert_labels = ['A','D']
 for i, txt in enumerate(vert_labels):
@@ -57,7 +59,6 @@ for i, txt in enumerate(vert_labels):
 
 plt.xlabel('$x$')
 plt.ylabel('$y$')
-plt.title('Plot of line AD')
 plt.legend(loc='best')
 plt.grid() # minor
 plt.axis('equal')
