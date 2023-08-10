@@ -59,6 +59,7 @@ for i, txt in enumerate(vert_labels):
 
 plt.xlabel('$x$')
 plt.ylabel('$y$')
+plt.title('Plot of line AD')
 plt.legend(loc='best')
 plt.grid() # minor
 plt.axis('equal')
