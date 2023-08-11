@@ -101,11 +101,10 @@
 
 \title{
 %	\logo{
-Solution of question 1.2.2
+Solution of Question 1.3.5
 %	}
 }
-\author{ Gagan Singla$^{*} - EE22BTECH11021$% <-this % stops a space
-
+\author{ Gagan Singla - EE22BTECH11021$^{*}$% <-this % stops a space
 	
 }	
 %\title{
@@ -213,49 +212,44 @@ Solution of question 1.2.2
 % For peerreview papers, this IEEEtran command inserts a page break and
 % creates the second title. It will be ignored for other modes.
 %\IEEEpeerreviewmaketitle
-Question:
-We are given a triangle and the midpoints D, E, F of the sides AB, BC, AC respectively. We have to find the normal form of equation of lines AD, BE, CF.\\
-\solution 
+
+%\renewcommand{\theequation}{\theenumi}
+%\subsection{Problem}
+
+%\section{Chemistry}
+%\begin{enumerate}[label=\arabic*.,ref=\thesection.\theenumi]
+%\numberwithin{equation}{enumi}
+
+Question: We are given a triangle with vertices $\vec{A}, \vec{B}, \vec{C}$ and the point of intersection of the altitudes drawn from the vertices $\vec{B}$ and $\vec{C}$ is $\vec{H}$. We have to prove that
 \begin{align}
-\vec{A} = \myvec{1\\-1}\\
-\vec{B} = \myvec{-4\\6}\\
-\vec{C} = \myvec{-3\\-5}
+\brak{\vec{A} - \vec{H}}^{\top}\brak{\vec{B} - \vec{C}} &= 0
 \end{align}
-The mid points D, E, F of sides AB, BC, AC are :-
+\solution
 \begin{align}
-\vec{D} &= \myvec{\frac{-7}{2}\\\frac{1}{2}}\\
-\vec{E} &= \myvec{-1\\-3}\\
-\vec{F} &= \myvec{\frac{-3}{2}\\\frac{5}{2}}
+\vec{A} &= \myvec{1\\-1}\\
+\vec{B} &= \myvec{-4\\6}\\
+\vec{C} &= \myvec{-3\\-5}
+\end{align}
+The point of intersection of altitutes $BE_1$ and $CF_1$ is:
+\begin{align}
+\vec{H} &= \myvec{\frac{17}{6}\\\frac{-5}{6}}
 \end{align}
 
-Now, the direction vector of line, $\vec{m}$ is :
+Now,
 \begin{align}
-\vec{m} &= \vec{D} - \vec{A}\\
-	&= \myvec{\frac{-9}{2}\\\frac{3}{2}}
+\vec{A} - \vec{H} &= \myvec{\frac{-11}{6}\\\frac{-1}{6}}\\
+\brak{\vec{A} - \vec{H}}^{\top} &= \myvec{\frac{-11}{6}&\frac{-1}{6}}\\
+\vec{B} - \vec{C} &= \myvec{-1\\11}\\
+\brak{\vec{A} - \vec{H}}^{\top}\brak{\vec{B} - \vec{C}} &= \myvec{\frac{-11}{6}&\frac{-1}{6}}\myvec{-1\\11}\\
+&= \frac{11}{6} - \frac{11}{6}\\
+&= 0
 \end{align}
 
-$\vec{n}$ can be written in the form :-
-\begin{align}
-\vec{n} &= \myvec{0&1\\-1&0}\vec{m}\\
-	&= \myvec{0&1\\-1&0}\myvec{\frac{-9}{2}\\\frac{3}{2}}\\
-	&= \myvec{\frac{3}{2}\\\frac{9}{2}}
-\end{align}
-
-The equation of line AD is :
-\begin{align}
-\vec{n}^{\top}(\vec{x} - \vec{A}) &= 0\\
-\implies\vec{n}^{\top}\vec{x} &= \vec{n}^{\top}\vec{A}\\
-\implies\myvec{\frac{3}{2}&\frac{9}{2}}\vec{x} &= \myvec{\frac{3}{2}&\frac{9}{2}}\myvec{1\\-1}\\
-\implies\frac{3}{2}\myvec{1&3}\vec{x} &= \frac{3}{2}\myvec{1&3}\myvec{1\\-1}\\
-\implies\myvec{1&3}\vec{x} &= \myvec{1&3}\myvec{1\\-1}\\
-		           &= -2
-\end{align}
-
-\begin{figure}[!htb]
+\begin{figure}
 \centering
 \includegraphics[width=\columnwidth]{./figs/tri_sss.pdf}
-\caption{Line AD}
-\label{fig:Line AD}
+\caption{Plot}
+\label{fig:Plot}
 \end{figure}
 
 \end{document}
