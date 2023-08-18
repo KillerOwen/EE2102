@@ -30,7 +30,7 @@ import subprocess
 import shlex
 #end if
 
-A = np.array([[1,1],[5,-7]])             #Defining the vector A
+A = np.array([[1,1],[5,-7]])             #Defining the matrix A
 B = np.array([2,20])                     #Defining the vector B
 H = np.linalg.solve(A,B) 
 

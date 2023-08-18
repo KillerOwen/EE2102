@@ -101,10 +101,10 @@
 
 \title{
 %	\logo{
-Question: 12.13.4.3
+Solution of question 10.15.1.23
 %	}
 }
-\author{ Gagan Singla$^{*} - EE22BTECH11021$% <-this % stops a space
+\author{Gagan Singla% <-this % stops a space
 
 	
 }	
@@ -214,9 +214,32 @@ Question: 12.13.4.3
 % creates the second title. It will be ignored for other modes.
 %\IEEEpeerreviewmaketitle
 
+Question: A game consists of tossing a one rupee coin 3 times and noting its outcome each time.
+Hanif wins if all the tosses give the same result i.e., three heads or three tails, and loses
+otherwise. Calculate the probability that Hanif will lose the game.
+
+\solution
+A coin toss can have only two outcomes which are:
 \begin{enumerate}
-\item Let X represent the difference between the number of heads and the number of tails obtained when a coin is tossed 6 times. What are possible values of X?
+\item Heads
+\item Tails
 \end{enumerate}
+But, we have 3 coins in total. So, there can be a total of $2^3$ outcomes. Hence, the total numbers of outcomes comes out to be 8.\newline
+Out of these 8 outcomes, there are 2 outcomes for:
+\begin{enumerate}
+\item All 3 coins show heads
+\item All 3 coins show tails
+\end{enumerate}
+Hence, there are 2 outcomes in which he wins and 6 outcomes in which he loses.
+\begin{align}
+P(event) &= \frac{\text{Number of favourable outcomes}}{\text{Number of total outcomes}}\\
+P(Hanif loses) &= \frac{\text{Number of outcomes in which he loses}}{\text{Number of total outcomes}}\\
+&= \frac{6}{8}\\
+&= \frac{3}{4}\\
+&= 0.75
+\end{align}
+Hence, the probability of Hanif losing the game is 0.75.
+
 
 \end{document}
 

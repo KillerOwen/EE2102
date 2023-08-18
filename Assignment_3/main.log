@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.8.2)  10 AUG 2023 16:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.8.2)  18 AUG 2023 16:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1176,37 +1176,41 @@ LaTeX Info: Redefining \nameref on input line 94.
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 177.
-LaTeX Font Info:    Trying to load font information for U+txsya on input line 1
-77.
+LaTeX Font Info:    Trying to load font information for U+txsya on input line 2
+27.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+txsyb on input line 1
-77.
+LaTeX Font Info:    Trying to load font information for U+txsyb on input line 2
+27.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+txmia on input line 1
-77.
+LaTeX Font Info:    Trying to load font information for U+txmia on input line 2
+27.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+txsyc on input line 1
-77.
+LaTeX Font Info:    Trying to load font information for U+txsyc on input line 2
+27.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for TS1+txr on input line 1
-77.
+LaTeX Font Info:    Trying to load font information for TS1+txr on input line 2
+27.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
-) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+)
+Overfull \hbox (31.77095pt too wide) detected at line 240
+[]
+ []
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
@@ -1215,22 +1219,22 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29092 strings out of 478287
- 574205 string characters out of 5849290
- 819485 words of memory out of 5000000
- 46688 multiletter control sequences out of 15000+600000
- 526182 words of font info for 141 fonts, out of 8000000 for 9000
+ 29097 strings out of 478287
+ 574170 string characters out of 5849290
+ 829476 words of memory out of 5000000
+ 46683 multiletter control sequences out of 15000+600000
+ 525132 words of font info for 139 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 101i,6n,96p,496b,327s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 101i,11n,96p,496b,327s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr
-i8a.pfb>
-Output written on main.pdf (1 page, 27084 bytes).
+e/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
+r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (1 page, 37637 bytes).
 PDF statistics:
- 38 PDF objects out of 1000 (max. 8388607)
- 26 compressed objects within 1 object stream
- 3 named destinations out of 1000 (max. 500000)
+ 53 PDF objects out of 1000 (max. 8388607)
+ 39 compressed objects within 1 object stream
+ 11 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
