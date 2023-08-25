@@ -223,7 +223,7 @@
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\centering}\gnumbox{$\norm{B-A}$}}
+	{\gnumericPB{\centering}\gnumbox{$\norm{\vec{B}-\vec{A}}$}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\centering}\gnumbox{5.1}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
@@ -231,7 +231,7 @@
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\centering}\gnumbox{$\norm{C-B}$}}
+	{\gnumericPB{\centering}\gnumbox{$\norm{\vec{C}-\vec{B}}$}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\centering}\gnumbox{7.07}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
@@ -239,11 +239,19 @@
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\centering}\gnumbox{$\norm{A-C}$}}
+	{\gnumericPB{\centering}\gnumbox{$\norm{\vec{A}-\vec{C}}$}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\centering}\gnumbox{4}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
 	{\gnumericPB{\centering}\gnumbox{Lenght of CA}}
+\\
+\hhline{|---|}
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{$\rank{\myvec{1&1&1\\\vec{A}&\vec{B}&\vec{C}}}$}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{3}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\centering}\gnumbox{Collinearity test}}
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
@@ -312,7 +320,7 @@
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\centering}\gnumbox{$\angle{A}$}}
+	{\gnumericPB{\centering}\gnumbox{$\angle{\vec{A}}$}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\centering}\gnumbox{101.31\degree}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
@@ -320,7 +328,7 @@
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\centering}\gnumbox{$\angle{B}$}}
+	{\gnumericPB{\centering}\gnumbox{$\angle{\vec{B}}$}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\centering}\gnumbox{33.69\degree}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
@@ -328,7 +336,7 @@
 \\
 \hhline{|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\centering}\gnumbox{$\angle{C}$}}
+	{\gnumericPB{\centering}\gnumbox{$\angle{\vec{C}}$}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\centering}\gnumbox{45\degree}}
 	&\multicolumn{1}{p{\gnumericColC}|}%

@@ -43,6 +43,9 @@ print('')
 #Finding the collinearity
 Mat = np.array([[1,1,1],[A[0],B[0],C[0]],[A[1],B[1],C[1]]])
 rank = np.linalg.matrix_rank(Mat)
+
+print("The rank of the matrix is : ",rank);
+
 if (rank<=2):
 	print("Hence proved that points A,B,C in a triangle are collinear")
 else:
