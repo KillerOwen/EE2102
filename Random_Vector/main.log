@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.8.2)  25 AUG 2023 10:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.8.2)  25 AUG 2023 21:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1277,7 +1277,8 @@ LaTeX Font Info:    Trying to load font information for TS1+txr on input line 2
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
-) (./table1.tex
+)
+(./tables/table1.tex
 \gnumericTableWidth=\skip72
 \gnumericTableWidthComplete=\skip73
 \gnumericMultiRowLength=\skip74
@@ -1293,8 +1294,8 @@ File: /home/quantum_fusion/EE2102/Random_Vector/figs/triangle.png Graphic file
 Package pdftex.def Info: /home/quantum_fusion/EE2102/Random_Vector/figs/triangl
 e.png  used on input line 236.
 (pdftex.def)             Requested size: 516.0pt x 387.0176pt.
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./table2.tex)
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+(./tables/table2.tex)
 </home/quantum_fusion/EE2102/Random_Vector/figs/medians.png, id=45, 462.528pt x
  346.896pt>
 File: /home/quantum_fusion/EE2102/Random_Vector/figs/medians.png Graphic file (
@@ -1303,8 +1304,8 @@ type png)
 Package pdftex.def Info: /home/quantum_fusion/EE2102/Random_Vector/figs/medians
 .png  used on input line 248.
 (pdftex.def)             Requested size: 516.0pt x 387.0176pt.
- [2 </home/quantum_fusion/EE2102/Random_Vector/figs/triangle.png>] (./table3.te
-x)
+ [2 </home/quantum_fusion/EE2102/Random_Vector/figs/triangle.png>] (./tables/ta
+ble3.tex)
 </home/quantum_fusion/EE2102/Random_Vector/figs/altitudes.png, id=54, 462.528pt
  x 346.896pt>
 File: /home/quantum_fusion/EE2102/Random_Vector/figs/altitudes.png Graphic file
@@ -1313,8 +1314,8 @@ File: /home/quantum_fusion/EE2102/Random_Vector/figs/altitudes.png Graphic file
 Package pdftex.def Info: /home/quantum_fusion/EE2102/Random_Vector/figs/altitud
 es.png  used on input line 260.
 (pdftex.def)             Requested size: 516.0pt x 387.0176pt.
-
-[3 </home/quantum_fusion/EE2102/Random_Vector/figs/medians.png>] (./table4.tex)
+ [3 </home/quantum_fusion/EE2102/Random_Vector/figs/medians.png>] (./tables/tab
+le4.tex)
 </home/quantum_fusion/EE2102/Random_Vector/figs/circumcircle.png, id=63, 462.52
 8pt x 346.896pt>
 File: /home/quantum_fusion/EE2102/Random_Vector/figs/circumcircle.png Graphic f
@@ -1323,8 +1324,8 @@ ile (type png)
 Package pdftex.def Info: /home/quantum_fusion/EE2102/Random_Vector/figs/circumc
 ircle.png  used on input line 272.
 (pdftex.def)             Requested size: 516.0pt x 387.0176pt.
-[4 </home/quantum_fusion/EE2102/Random_Vector/figs/altitudes.png>]
-(./table5.tex)
+ [4 </home/quantum_fusion/EE2102/Random_Vector/figs/altitudes.png>] (./tables/t
+able5.tex)
 </home/quantum_fusion/EE2102/Random_Vector/figs/incircle.png, id=71, 462.528pt 
 x 346.896pt>
 File: /home/quantum_fusion/EE2102/Random_Vector/figs/incircle.png Graphic file 
@@ -1334,8 +1335,7 @@ Package pdftex.def Info: /home/quantum_fusion/EE2102/Random_Vector/figs/incircl
 e.png  used on input line 284.
 (pdftex.def)             Requested size: 516.0pt x 387.0176pt.
  [5 </home/quantum_fusion/EE2102/Random_Vector/figs/circumcircle.png>] [6] [7 <
-/home/quantum_fusion/EE2102/Random_Vector/figs/incircle.png>]
-(./main.aux)
+/home/quantum_fusion/EE2102/Random_Vector/figs/incircle.png>] (./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1343,8 +1343,8 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: EA16A8822186619B3595E9E3A44CA8DE;526.
  ) 
 Here is how much of TeX's memory you used:
- 29572 strings out of 478287
- 583564 string characters out of 5849290
+ 29573 strings out of 478287
+ 583711 string characters out of 5849290
  864924 words of memory out of 5000000
  47089 multiletter control sequences out of 15000+600000
  539583 words of font info for 173 fonts, out of 8000000 for 9000
