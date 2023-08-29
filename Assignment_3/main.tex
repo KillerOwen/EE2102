@@ -224,45 +224,42 @@ A coin toss can have only two outcomes which are:
 \item Heads
 \item Tails
 \end{enumerate}
-Both of these outcomes are equally likely. We can assign a random variable $X$ such that:
+Both of these outcomes are equally likely. Let us consider random variables $X$ for the number of heads in the experiment.
 \begin{center}
 \begin{tabular}{|c|c|c|}
 \hline
-Outcome & $X$ & Probability of $X$\\
+Parameter & Value & Description\\
 \hline
-Heads & 1 & 0.5\\
+$n$ & 3 & Number of trails\\
 \hline
-Tails & 0 & 0.5\\
+$p$ & 0.5 & Probability of success\\
 \hline
-\end{tabular}
-\end{center}
-But, we have 3 coins in total. So, there can be a total of $2^3$ outcomes. Hence, the total numbers of outcomes comes out to be 8.\newline
-Out of these 8 outcomes, there are 2 outcomes for:
-\begin{enumerate}
-\item All 3 coins show heads
-\item All 3 coins show tails
-\end{enumerate}
-We can use random variable $Y$ such that:
-\begin{center}
-\begin{tabular}{|c|c|c|}
-\hline
-Outcome & $Y$ & Number of outcomes\\
-\hline
-All Heads or All Tails \brak{\text{wins}} & 0 & 2\\
-\hline
-Any other outcome \brak{\text{loses}} & 1 & 6\\
+$q$ & 0.5 & Probability of Failure\\
 \hline
 \end{tabular}
 \end{center}
+The PMF of $X$ is 
 \begin{align}
-P(event) &= \frac{\text{Number of favourable outcomes}}{\text{Number of total outcomes}}\\
-P(Y) &= \frac{\text{Number of outcomes in which he loses}}{\text{Number of total outcomes}}\\
-&= \frac{6}{8}\\
-&= \frac{3}{4}\\
-&= 0.75
+	\pr{X = k} &= \comb{n}{k}  p^{k}  q^{n-k}\\
+	&= \comb{3}{k} \brak{\frac{1}{2}}^{k} \brak{\frac{1}{2}}^{3-k} \qquad \forall k={0,1,2,3} \\
+	&= \comb{3}{k} \brak{\frac{1}{2}}^{3} \qquad \forall k={0,1,2,3} 
 \end{align}
-Hence, the probability of Hanif losing the game is 0.75.
+The Cumulative Distribution Function (CDF) of X is given by the probability that X is less than or equal to a given value k, for k = 0, 1, 2, 3.
+The CDF can be expressed as:
+\begin{align}
+	F_{X}(k) &= \pr{X \leq k}\\
+	&= \sum_{i=0}^k\comb{n}{i}p^iq^{n-i}\\
+	&= \sum_{i=0}^k\comb{3}{i} \brak{\frac{1}{2}}^{3}
+\end{align}
+Hanif will lose the game if the value of X is 1 or 2. Hence, we need to find $\pr{X = 1} + \pr{X = 2}$
+\begin{align}
+\pr{X = 1} + \pr{X = 2} &= \comb{3}{1} \brak{\frac{1}{2}}^{3} + \comb{3}{2} \brak{\frac{1}{2}}^{3}\\
+			&= 3\brak{\frac{1}{8}} + 3\brak{\frac{1}{8}}\\
+			&= 3\brak{\frac{1}{4}}\\
+			&= 0.75
+\end{align}
 
+Hence, the probability of hanif losing the game is 0.75
 
 \end{document}
 
