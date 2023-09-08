@@ -217,32 +217,22 @@ Question: Prove if the given statement is true or false - The probability of int
 \solution
 We have to prove that:
 \begin{align}
-\pr{A.B} \leq \pr{A}
+\pr{AB} \leq \pr{A}
 \end{align}
-We have to consider 3 cases:
-\begin{enumerate}
-\item If A and B are mutually exclusive
+If we consider conditional probability:
 \begin{align}
-\pr{A.B} &= 0\\
-\pr{A} &\geq 0\\
-\implies \pr{A.B} &\leq \pr{A}
+\pr{B | A} &= \frac{\pr{AB}}{\pr{A}}\\
+\pr{AB} &= \pr{B | A}\pr{A}\label{three}
 \end{align}
-\item If A and B are independent
+We know that the value of probability ranges from 0 to 1.
 \begin{align}
-\pr{A.B} &= \pr{A}.\pr{B}\\
-\pr{B} &\leq 1\\
-\implies \pr{A.B} &\leq \pr{A}
+0 \leq \pr{B | A} \leq 1\\
+\text{Multiplying \pr{A} both sides}\notag\\
+0 \leq \pr{B | A}\pr{A} \leq \pr{A}\\
+\text{Substituting value from equation \brak{\ref{three}}}\notag\\
+\implies \pr{AB} \leq \pr{A}
 \end{align}
-\item If A and B are neither mutually exclusive nor independent\\
-By inclusion-exclusion principle,
-\begin{align}
-\pr{A.B} &= \pr{A} + \pr{B} - \pr{A+B}\\
-\text{We know that,}\\
-\pr{A+B} &\geq \pr{B}\\
-\implies \pr{A.B} &\leq \pr{A}
-\end{align}
-\end{enumerate}
-All three cases justify the given statement. Hence, the given statement is true.
+Hence, the given statement is true.
 \end{document}
 
 
