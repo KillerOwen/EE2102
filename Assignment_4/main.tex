@@ -219,17 +219,25 @@ We have to prove that:
 \begin{align}
 \pr{AB} \leq \pr{A}
 \end{align}
-If we consider conditional probability:
+We know that,
 \begin{align}
-\pr{B | A} &= \frac{\pr{AB}}{\pr{A}}\\
-\pr{AB} &= \pr{B | A}\pr{A}\label{three}
+BB' &= 0\\
+B + B' &= 1\\
+\implies \pr{A} &= \pr{A\brak{B+B'}}\\
+		&= \pr{AB + AB'}
+\end{align}
+By using inclusion-exclusion principle,
+\begin{align}
+\pr{A} &= \pr{AB} + \pr{AB'} - \pr{\brak{AB}\brak{AB'}}\\
+	&= \pr{AB} + \pr{AB'} - \pr{\brak{AA}\brak{BB'}}\\
+	&= \pr{AB} + \pr{AB'}\label{eight}
 \end{align}
 We know that the value of probability ranges from 0 to 1.
 \begin{align}
-0 \leq \pr{B | A} \leq 1\\
-\text{Multiplying \pr{A} both sides}\notag\\
-0 \leq \pr{B | A}\pr{A} \leq \pr{A}\\
-\text{Substituting value from equation \brak{\ref{three}}}\notag\\
+0 \leq \pr{AB'} \leq 1\\
+\text{Adding \pr{AB} both sides}\notag\\
+\pr{AB} \leq \pr{AB} + \pr{AB'}\\
+\text{Substituting value from equation \brak{\ref{eight}}}\notag\\
 \implies \pr{AB} \leq \pr{A}
 \end{align}
 Hence, the given statement is true.
