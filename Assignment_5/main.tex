@@ -216,57 +216,57 @@ Question: Suppose that 6\% of the people with blood group O are left handed and 
 \solution 
 Let us consider two random variables $A$ and $B$,
 \begin{center}
-\begin{tabular}{|c|c|}
+\begin{tabular}{|c|c|c|}
 \hline
-Random Variable & Event\\
+Random Variable & Value & Event\\
 \hline
-$A$ & Blood Group O\\
+$A$ & 1 & Blood Group O\\
 \hline
-$A^{\prime}$ & Any other blood group\\
+$A$ & 0 & Any other blood group\\
 \hline
-$B$ & Left-Handed person\\
+$B$ & 1 & Left-Handed person\\
+\hline
+$B$ & 0 & Right-Handed person\\
 \hline
 \end{tabular}
 \end{center}
-We need to find the value of $\pr{A|B}$. We are given that,
+We need to find the value of $\pr{A = 1|B = 1}$. We are given that,
 \begin{align}
-\pr{A} &= 0.3\\
-\therefore \pr{A^{\prime}} &= 1 - \pr{A}\\
+\pr{A = 1} &= 0.3\\
+\therefore \pr{A = 0} &= 1 - \pr{A = 1}\\
 			   &= 1 - 0.3\\
 			   &= 0.7\\	 
-\pr{B|A} &= 0.06\\
-\implies \frac{\pr{BA}}{\pr{A}} &= 0.06\\
-\implies \pr{BA} &= 0.06\pr{A}\\ 
+\pr{B = 1|A = 1} &= 0.06\\
+\implies \frac{\pr{\brak{B = 1}\brak{A = 1}}}{\pr{A = 1}} &= 0.06\\
+\implies \pr{\brak{B = 1}\brak{A = 1}} &= 0.06\pr{A = 1}\\ 
 		 &= 0.018\label{a}\\ 
-\pr{B|A^{\prime}} &= 0.1\\
-\implies \frac{\pr{BA^{\prime}}}{\pr{A^{\prime}}} &= 0.1\\
-\implies \pr{BA^{\prime}} &= 0.1\pr{A^{\prime}}\\ 
+\pr{B = 1|A = 0} &= 0.1\\
+\implies \frac{\pr{\brak{B = 1}\brak{A = 0}}}{\pr{A = 0}} &= 0.1\\
+\implies \pr{\brak{B = 1}\brak{A = 0}} &= 0.1\pr{A = 0}\\ 
 		 	  &= 0.07\label{b}
 \end{align}
 We know that,
 \begin{align}
-A + A^{\prime} &= 1\\
-AA^{\prime} &= 0
+\brak{A = 1} + \brak{A = 0} &= 1\\
+\brak{A = 1}\brak{A = 0} &= 0
 \end{align}
-We can write $\pr{B}$ as:
+We can write $\pr{B = 1}$ as:
 \begin{align}
-\pr{B} &= \pr{B\brak{A + A^{\prime}}}\\
-	&= \pr{BA + BA^{\prime}}
+\pr{B = 1} &= \pr{\brak{B = 1}\brak{\brak{A = 1} + \brak{A = 0}}}\\
+	&= \pr{\brak{B = 1}\brak{A = 1} + \brak{B = 1}\brak{A = 0}}
 \end{align}
 By inclusion-exclusion principle,
 \begin{align}
-\pr{B} &= \pr{BA} + \pr{BA^{\prime}} + \pr{\brak{BA}\brak{BA^{\prime}}}\\
-	&= \pr{BA} + \pr{BA^{\prime}} + \pr{\brak{BB}\brak{AA^{\prime}}}\\
-	&= \pr{BA} + \pr{BA^{\prime}}
+\pr{B = 1} &= \pr{\brak{B = 1}\brak{A = 1}} + \pr{\brak{B = 1}\brak{A = 0}}
 \end{align} 
 By substituting values from equation \brak{\ref{a}} and \brak{\ref{b}},
 \begin{align}
 \pr{B} &= 0.018 + 0.07\\
        &= 0.088
 \end{align}
-So, $\pr{A|B}$ can be written as,
+So, $\pr{A = 1|B = 1}$ can be written as,
 \begin{align}
-\pr{A|B} &= \frac{\pr{BA}}{\pr{B}}\\
+\pr{A|B} &= \frac{\pr{\brak{B = 1}\brak{A = 1}}}{\pr{\brak{B = 1}}}\\
 	 &= \frac{0.018}{0.088}\\
 	 &= \frac{9}{44}
 \end{align}
