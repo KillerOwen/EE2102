@@ -24,7 +24,7 @@
 \usepackage{calc}                                             
 \usepackage{multirow}                                         
 \usepackage{hhline}                                           
-\usepackage{ifthen}       
+\usepackage{ifthen}  
 %
 %\usepackage{setspace}
 %\usepackage{gensymb}
@@ -222,61 +222,59 @@ Solution to question 12.13.3.33
 Question: Suppose that 6\% of the people with blood group O are left handed and 10\% of those with other blood groups are left handed 30\% of the people have blood group O. If a left handed person is selected at random, what is the probability that he/she will have blood group O?
 
 \solution 
-Let us consider two random variables $A_i$ and $B_i$,
-
-\begin{table}[h!]
+Let us consider two random variables $A$ and $B$. We are given that,
+\begin{table}[ht!]
 \input{/home/quantum_fusion/EE2102/Assignment_5/tables/Book1.tex}
 \end{table}
-
-We need to find the value of $\pr{\left. A_1 \right |B_1}$. We are given that,
 \begin{align}
-\pr{A_1} &= 0.3\\
-\pr{\left. B_1 \right |A_1} &= 0.06\\
-\pr{\left. B_1 \right |A_0} &= 0.1
+\pr{A} &= 0.3\\
+\pr{B|A} &= 0.06\\
+\pr{B|A^{\prime}} &= 0.1
 \end{align}
-The above equations can be written as:
+So, we can write that,
 \begin{align}
-\therefore \pr{A_0} &= 1 - \pr{A_1}\\
+\pr{A} &= 0.3\\
+\therefore \pr{A^{\prime}} &= 1 - \pr{A}\\
 			   &= 1 - 0.3\\
 			   &= 0.7\\	 
-\pr{\left. B_1 \right | A_1} &= 0.06\\
-\implies \frac{\pr{B_1A_1}}{\pr{A_1}} &= 0.06\\
-\implies \pr{B_1A_1} &= 0.06\pr{A_1}\\ 
+\pr{B|A} &= 0.06\\
+\implies \frac{\pr{BA}}{\pr{A}} &= 0.06\\
+\implies \pr{BA} &= 0.06\pr{A}\\ 
 		 &= 0.018\\ 
-\pr{\left. B_1 \right |A_0} &= 0.1\\
-\implies \frac{\pr{B_1A_0}}{\pr{A_0}} &= 0.1\\
-\implies \pr{B_1A_0} &= 0.1\pr{A_0}\\ 
+\pr{B|A^{\prime}} &= 0.1\\
+\implies \frac{\pr{BA^{\prime}}}{\pr{A^{\prime}}} &= 0.1\\
+\implies \pr{BA^{\prime}} &= 0.1\pr{A^{\prime}}\\ 
 		 	  &= 0.07
 \end{align}
-Hence, we get, 
+Hence,
 \begin{align}
-\pr{B_1A_1} &= 0.018\label{a}\\
-\pr{B_1A_0} &= 0.07\label{b}
+\pr{BA} &= 0.018\label{a}\\
+\pr{BA^{\prime}} &= 0.07\label{b}
 \end{align}
 We know that,
 \begin{align}
-A_1 + A_0 &= 1\\
-A_1A_0 &= 0
+A + A^{\prime} &= 1\\
+AA^{\prime} &= 0
 \end{align}
-We can write $\pr{B_1}$ as:
+We can write $\pr{B}$ as:
 \begin{align}
-\pr{B_1} &= \pr{B_1\brak{A_1 + A_0}}\\
-	&= \pr{B_1A_0 + B_1A_1}
+\pr{B} &= \pr{B\brak{A + A^{\prime}}}\\
+	&= \pr{BA + BA^{\prime}}
 \end{align}
 By inclusion-exclusion principle,
 \begin{align}
-\pr{B_1} &= \pr{B_1A_1} + \pr{B_1A_0} + \pr{\brak{B_1A_1}\brak{B_1A_0}}\\
-	&= \pr{B_1A_1} + \pr{B_1A_0} + \pr{\brak{B_1B_1}\brak{A_1A_0}}\\
-	&= \pr{B_1A_1} + \pr{B_1A_0}
+\pr{B} &= \pr{BA} + \pr{BA^{\prime}} + \pr{\brak{BA}\brak{BA^{\prime}}}\\
+	&= \pr{BA} + \pr{BA^{\prime}} + \pr{\brak{BB}\brak{AA^{\prime}}}\\
+	&= \pr{BA} + \pr{BA^{\prime}}
 \end{align} 
 By substituting values from equation \brak{\ref{a}} and \brak{\ref{b}},
 \begin{align}
-\pr{B_1} &= 0.018 + 0.07\\
+\pr{B} &= 0.018 + 0.07\\
        &= 0.088
 \end{align}
-So, $\pr{\left. A_1 \right |B_1}$ can be written as,
+So, $\pr{A|B}$ can be written as,
 \begin{align}
-\pr{\left. A_1 \right |B_1} &= \frac{\pr{B_1A_1}}{\pr{B_1}}\\
+\pr{A|B} &= \frac{\pr{BA}}{\pr{B}}\\
 	 &= \frac{0.018}{0.088}\\
 	 &= \frac{9}{44}
 \end{align}

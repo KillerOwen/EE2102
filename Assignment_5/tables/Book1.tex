@@ -123,11 +123,12 @@
 \setlongtables
 
 \setlength\gnumericTableWidth{%
-	113pt+%
+	56pt+%
 	53pt+%
 	134pt+%
+	88pt+%
 0pt}
-\def\gumericNumCols{3}
+\def\gumericNumCols{4}
 \setlength\gnumericTableWidthComplete{\gnumericTableWidth+%
          \tabcolsep*\gumericNumCols*2+\arrayrulewidth*\gumericNumCols}
 \ifthenelse{\lengthtest{\gnumericTableWidthComplete > \linewidth}}%
@@ -145,14 +146,16 @@
 %%                                                                  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\ifthenelse{\isundefined{\gnumericColA}}{\newlength{\gnumericColA}}{}\settowidth{\gnumericColA}{\begin{tabular}{@{}p{113pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColA}}{\newlength{\gnumericColA}}{}\settowidth{\gnumericColA}{\begin{tabular}{@{}p{56pt*\gnumericScale}@{}}x\end{tabular}}
 \ifthenelse{\isundefined{\gnumericColB}}{\newlength{\gnumericColB}}{}\settowidth{\gnumericColB}{\begin{tabular}{@{}p{53pt*\gnumericScale}@{}}x\end{tabular}}
 \ifthenelse{\isundefined{\gnumericColC}}{\newlength{\gnumericColC}}{}\settowidth{\gnumericColC}{\begin{tabular}{@{}p{134pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColD}}{\newlength{\gnumericColD}}{}\settowidth{\gnumericColD}{\begin{tabular}{@{}p{88pt*\gnumericScale}@{}}x\end{tabular}}
 
 \begin{tabular}[c]{%
 	b{\gnumericColA}%
 	b{\gnumericColB}%
 	b{\gnumericColC}%
+	b{\gnumericColD}%
 	}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -163,77 +166,89 @@
 %%  the first, last or every page. Use \multicolumn if you want.    %%
 
 %%  Header for the first page.                                      %%
-%	\multicolumn{3}{c}{The First Header} \\ \hline 
+%	\multicolumn{4}{c}{The First Header} \\ \hline 
 %	\multicolumn{1}{c}{colTag}	%Column 1
 %	&\multicolumn{1}{c}{colTag}	%Column 2
+%	&\multicolumn{1}{c}{colTag}	%Column 3
 %	&\multicolumn{1}{c}{colTag}	\\ \hline %Last column
 %	\endfirsthead
 
 %%  The running header definition.                                  %%
 %	\hline
-%	\multicolumn{3}{l}{\ldots\small\slshape continued} \\ \hline
+%	\multicolumn{4}{l}{\ldots\small\slshape continued} \\ \hline
 %	\multicolumn{1}{c}{colTag}	%Column 1
 %	&\multicolumn{1}{c}{colTag}	%Column 2
+%	&\multicolumn{1}{c}{colTag}	%Column 3
 %	&\multicolumn{1}{c}{colTag}	\\ \hline %Last column
 %	\endhead
 
 %%  The running footer definition.                                  %%
 %	\hline
-%	\multicolumn{3}{r}{\small\slshape continued\ldots} \\
+%	\multicolumn{4}{r}{\small\slshape continued\ldots} \\
 %	\endfoot
 
 %%  The ending footer definition.                                   %%
-%	\multicolumn{3}{c}{That's all folks} \\ \hline 
+%	\multicolumn{4}{c}{That's all folks} \\ \hline 
 %	\endlastfoot
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\hhline{|-|-|-}
+\hhline{|-|-|-|-}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
-	{\gnumericPB{\centering}\gnumbox{Random Variable}}
+	{\gnumericPB{\centering}\gnumbox{RV}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
-	{\gnumericPB{\centering}\gnumbox{i}}
+	{\gnumericPB{\centering}\gnumbox{Value}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
 	{\gnumericPB{\centering}\gnumbox{Description}}
+	&\multicolumn{1}{p{\gnumericColD}|}%
+	{\gnumericPB{\centering}\gnumbox{Representation}}
 \\
-\hhline{|---|}
+\hhline{|----|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
 	{\setlength{\gnumericMultiRowLength}{0pt}%
 	 \addtolength{\gnumericMultiRowLength}{\gnumericColA}%
 	 \multirow{2}[1]{\gnumericMultiRowLength}{\parbox{\gnumericMultiRowLength}{%
-	 \gnumericPB{\centering}\gnumbox{$A_i$}}}}
+	 \gnumericPB{\centering}\gnumbox{A}}}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\centering}\gnumbox{0}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
 	{\gnumericPB{\centering}\gnumbox{Any other Blood Group}}
+	&\multicolumn{1}{p{\gnumericColD}|}%
+	{\gnumericPB{\centering}\gnumbox{$A^{\prime}$}}
 \\
-\hhline{~|--|}
+\hhline{~|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
 	{}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\centering}\gnumbox{1}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
 	{\gnumericPB{\centering}\gnumbox{Blood Group O}}
+	&\multicolumn{1}{p{\gnumericColD}|}%
+	{\gnumericPB{\centering}\gnumbox{$A$}}
 \\
-\hhline{|---|}
+\hhline{|----|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
 	{\setlength{\gnumericMultiRowLength}{0pt}%
 	 \addtolength{\gnumericMultiRowLength}{\gnumericColA}%
 	 \multirow{2}[1]{\gnumericMultiRowLength}{\parbox{\gnumericMultiRowLength}{%
-	 \gnumericPB{\centering}\gnumbox{$B_i$}}}}
+	 \gnumericPB{\centering}\gnumbox{B}}}}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\centering}\gnumbox{0}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
 	{\gnumericPB{\centering}\gnumbox{Right Handed Person}}
+	&\multicolumn{1}{p{\gnumericColD}|}%
+	{\gnumericPB{\centering}\gnumbox{$B^{\prime}$}}
 \\
-\hhline{~|--|}
+\hhline{~|---|}
 	 \multicolumn{1}{|p{\gnumericColA}|}%
 	{}
 	&\multicolumn{1}{p{\gnumericColB}|}%
 	{\gnumericPB{\centering}\gnumbox{1}}
 	&\multicolumn{1}{p{\gnumericColC}|}%
 	{\gnumericPB{\centering}\gnumbox{Left Handed Person}}
+	&\multicolumn{1}{p{\gnumericColD}|}%
+	{\gnumericPB{\centering}\gnumbox{$B$}}
 \\
-\hhline{|-|-|-|}
+\hhline{|-|-|-|-|}
 \end{tabular}
 
 \ifthenelse{\isundefined{\languageshorthands}}{}{\languageshorthands{\languagename}}
