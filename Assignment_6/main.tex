@@ -17,14 +17,6 @@
 \usepackage{tkz-euclide} % loads  TikZ and tkz-base
 \usepackage{listings}
 \usepackage{gvv}
-\usepackage[latin1]{inputenc}                                 
-\usepackage{color}                                            
-\usepackage{array}                                            
-\usepackage{longtable}                                        
-\usepackage{calc}                                             
-\usepackage{multirow}                                         
-\usepackage{hhline}                                           
-\usepackage{ifthen}  
 %
 %\usepackage{setspace}
 %\usepackage{gensymb}
@@ -109,10 +101,11 @@
 
 \title{
 %	\logo{
-Solution to question 12.13.3.33
+Solution to question 12.13.3.67
 %	}
 }
-\author{ Gagan Singla - EE22BTECH11021 }	
+\author{ Gagan Singla - EE22BTECH11021	
+}	
 %\title{
 %	\logo{Matrix Analysis through Octave}{\begin{center}\includegraphics[scale=.24]{tlc}\end{center}}{}{HAMDSP}
 %}
@@ -219,66 +212,60 @@ Solution to question 12.13.3.33
 % creates the second title. It will be ignored for other modes.
 %\IEEEpeerreviewmaketitle
 
-Question: Suppose that 6\% of the people with blood group O are left handed and 10\% of those with other blood groups are left handed 30\% of the people have blood group O. If a left handed person is selected at random, what is the probability that he/she will have blood group O?
+Question: Let $\pr{A} = \frac{7}{13}$, $\pr{B} = \frac{9}{13}$, $\pr{AB} = \frac{4}{13}$. Then $\pr{\left.A^{\prime}\right |B}$ is equal to
+\begin{enumerate}[label=(\alph*)]
+\item $\frac{6}{13}$
+\item $\frac{4}{13}$
+\item $\frac{4}{9}$
+\item $\frac{5}{9}$
+\end{enumerate}
 
-\solution 
-Let us consider two random variables $A$ and $B$. We are given that,
-\begin{table}[ht!]
-\input{/home/quantum_fusion/EE2102/Assignment_5/tables/Book1.tex}
-\end{table}
+\solution
+We are given that:
 \begin{align}
-\pr{A} &= 0.3\\
-\pr{\left.B\right | A} &= 0.06\\
-\pr{\left.B\right | A^{\prime}} &= 0.1
+\pr{A} &= \frac{7}{13}\label{a}\\
+\pr{B} &= \frac{9}{13}\label{b}\\
+\pr{AB} &= \frac{4}{13}\label{c}
 \end{align}
-So, we can write that,
-\begin{align}
-\pr{A} &= 0.3\\
-\therefore \pr{A^{\prime}} &= 1 - \pr{A}\\
-			   &= 1 - 0.3\\
-			   &= 0.7\\	 
-\pr{\left.B\right | A} &= 0.06\\
-\implies \frac{\pr{BA}}{\pr{A}} &= 0.06\\
-\implies \pr{BA} &= 0.06\pr{A}\\ 
-		 &= 0.018\\ 
-\pr{\left.B\right | A^{\prime}} &= 0.1\\
-\implies \frac{\pr{BA^{\prime}}}{\pr{A^{\prime}}} &= 0.1\\
-\implies \pr{BA^{\prime}} &= 0.1\pr{A^{\prime}}\\ 
-		 	  &= 0.07
-\end{align}
-Hence,
-\begin{align}
-\pr{BA} &= 0.018\label{a}\\
-\pr{BA^{\prime}} &= 0.07\label{b}
-\end{align}
-We know that,
+
+We know that:
 \begin{align}
 A + A^{\prime} &= 1\\
 AA^{\prime} &= 0
 \end{align}
-We can write $\pr{B}$ as:
+
+Hence, we can say that:
 \begin{align}
 \pr{B} &= \pr{B\brak{A + A^{\prime}}}\\
-	&= \pr{BA + BA^{\prime}}
+       &= \pr{AB + A^{\prime}B}
 \end{align}
+
 By inclusion-exclusion principle,
 \begin{align}
-\pr{B} &= \pr{BA} + \pr{BA^{\prime}} + \pr{\brak{BA}\brak{BA^{\prime}}}\\
-	&= \pr{BA} + \pr{BA^{\prime}} + \pr{\brak{BB}\brak{AA^{\prime}}}\\
-	&= \pr{BA} + \pr{BA^{\prime}}
-\end{align} 
-By substituting values from equation \eqref{a} and \eqref{b},
-\begin{align}
-\pr{B} &= 0.018 + 0.07\\
-       &= 0.088
+\pr{B} &= \pr{AB} + \pr{A^{\prime}B} + \pr{\brak{AB}\brak{A^{\prime}B}}\\
+	&= \pr{AB} + \pr{A^{\prime}B} + \pr{\brak{BB}\brak{AA^{\prime}}}\\
+	&= \pr{AB} + \pr{A^{\prime}B}
 \end{align}
-So, $\pr{\left.A\right |B}$ can be written as,
+
+We get that,
 \begin{align}
-\pr{\left.A\right |B} &= \frac{\pr{BA}}{\pr{B}}\\
-	 &= \frac{0.018}{0.088}\\
-	 &= \frac{9}{44}
+\pr{A^{\prime}B} &= \pr{B} - \pr{AB} 
 \end{align}
-Hence, if a left handed is selected at random, the probability of the person having blood group O is $\frac{9}{44}$. 
+Substituting values from \eqref{b} and \eqref{c},
+\begin{align}
+\pr{A^{\prime}B} &= \frac{9}{13} - \frac{4}{13}\\
+		 &= \frac{5}{13}
+\end{align}
+
+Then, $\pr{\left.A^{\prime}\right |B}$ is:
+\begin{align}
+\pr{\left.A^{\prime}\right |B} &= \frac{\pr{A^{\prime}B}}{\pr{B}}\\
+				&= \frac{\frac{5}{13}}{\frac{9}{13}}\\
+				&= \frac{5}{9} 
+\end{align}
+
+Hence, option \brak{d} is correct.
+
 \end{document}
 
 
