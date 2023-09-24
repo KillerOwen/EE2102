@@ -223,53 +223,40 @@ Let us define:
 \end{table}
 \begin{enumerate}[label=(\roman*)]
 \item {Gaussian Distribution}\\
-Lets define a random variable $Y$ which represents the number of spade cards drawn.
-\begin{align}
-Y = \{0,1,2,3,4,5\}
-\end{align}
 The gaussian distribution function is defined as:
 \begin{align}
-p_Y\brak{x} &= \frac{1}{\sqrt{2\pi{\sigma}^2}} e^{-\frac{\brak{x-\mu}^2}{2{\sigma}^2}} \qquad \brak{x \in Y}
-\end{align}
-
-The central limit theorm states that we can take a random variable $Z$ such that,
-\begin{align}
-Z \approx \frac{Y-\mu}{\sigma}
-\end{align}
-Now, Z is a random variable with $\gauss{0}{1}$. Hence, the gaussian distribution function changes to:
-\begin{align}
-p_Z\brak{x} &= \frac{1}{\sqrt{2\pi}} e^{-\frac{{x}^2}{2}} \qquad \brak{x \in Z}\label{9.3.8}
+p_Y\brak{x} &= \frac{1}{\sqrt{2\pi{\sigma}^2}} e^{-\frac{\brak{x-\mu}^2}{2{\sigma}^2}}\label{9.3.8} \qquad \brak{x \in Y}
 \end{align}
 \begin{enumerate}[label=(\alph*)]
 \item If we consider all cards to be spades,
 \begin{align}
-Y &= 5\\
-Z &\approx \frac{5 - \frac{5}{4}}{\sqrt{\frac{15}{16}}} \approx \sqrt{15}
+Y &= 5
 \end{align}
 Substituting values in \eqref{9.3.8},
 \begin{align}
-p_Z\brak{\sqrt{15}} &= \frac{1}{\sqrt{2\pi}} e^{-\frac{15}{2}}\\
+p_Y\brak{5} &= \frac{1}{\sqrt{2\pi\brak{\frac{15}{16}}}} e^{-\frac{\brak{5 - \frac{5}{4}}^2}{2\brak{\frac{15}{16}}}}\\
+		   &= \frac{1}{\sqrt{2\pi}} e^{-\frac{15}{2}}\\
 	           &= 0.0001245
 \end{align}
 \item If we consider 3 cards to be spades,
 \begin{align}
-Y &= 3\\
-Z &\approx \frac{3 - \frac{5}{4}}{\sqrt{\frac{15}{16}}} \approx \frac{7}{\sqrt{15}}
+Y &= 3
 \end{align}
 Substituting values in \eqref{9.3.8},
 \begin{align}
-p_Z\brak{\frac{7}{\sqrt{15}}} &= \frac{1}{\sqrt{2\pi}} e^{-\frac{49}{30}}\\
+p_Y\brak{3} &= \frac{1}{\sqrt{2\pi\brak{\frac{15}{16}}}} e^{-\frac{\brak{3 - \frac{5}{4}}^2}{2\brak{\frac{15}{16}}}}\\
+			      &= \frac{1}{\sqrt{2\pi}} e^{-\frac{49}{30}}\\
 			      &= 0.044
 \end{align}
 \item If we consider 0 cards to be spades,
 \begin{align}
-Y &= 0\\
-Z &\approx -\frac{5}{\sqrt{15}}
+Y &= 0
 \end{align}
 Substituting values in \eqref{9.3.8},
 \begin{align}
-p_Z\brak{-\frac{5}{\sqrt{15}}}&= \frac{1}{\sqrt{2\pi}} e^{-\frac{5}{6}}\\
-			      &= 0.0978
+p_Y\brak{0} &= \frac{1}{\sqrt{2\pi\brak{\frac{15}{16}}}} e^{-\frac{\brak{0 - \frac{5}{4}}^2}{2\brak{\frac{15}{16}}}}\\
+			       &= \frac{1}{\sqrt{2\pi}} e^{-\frac{5}{6}}\\
+			       &= 0.0978
 \end{align}
 \end{enumerate}
 \item Gaussian vs Binomial Comparison
