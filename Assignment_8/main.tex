@@ -221,10 +221,6 @@ Let us define:
 \begin{table}[!ht]
 \input{tables/Book1.tex}
 \end{table}
-\begin{align}
-\mu = np = 5\brak{\frac{1}{4}} = \frac{5}{4}\\
-{\sigma}^2 = npq = 5\brak{\frac{1}{4}}\brak{\frac{3}{4}} = \frac{15}{16}	
-\end{align}
 \begin{enumerate}[label=(\roman*)]
 \item {Gaussian Distribution}\\
 Lets define a random variable $Y$ which represents the number of spade cards drawn.
@@ -233,7 +229,7 @@ Y = \{0,1,2,3,4,5\}
 \end{align}
 The gaussian distribution function is defined as:
 \begin{align}
-P_Y\brak{x} &= \frac{1}{\sqrt{2\pi{\sigma}^2}} e^{-\frac{\brak{x-\mu}^2}{2{\sigma}^2}} 
+p_Y\brak{x} &= \frac{1}{\sqrt{2\pi{\sigma}^2}} e^{-\frac{\brak{x-\mu}^2}{2{\sigma}^2}} \qquad \brak{x \in Y}
 \end{align}
 
 The central limit theorm states that we can take a random variable $Z$ such that,
@@ -242,7 +238,7 @@ Z \approx \frac{Y-\mu}{\sigma}
 \end{align}
 Now, Z is a random variable with $\gauss{0}{1}$. Hence, the gaussian distribution function changes to:
 \begin{align}
-P_Z\brak{x} &= \frac{1}{\sqrt{2\pi}} e^{-\frac{{x}^2}{2}}\label{9.3.8}
+p_Z\brak{x} &= \frac{1}{\sqrt{2\pi}} e^{-\frac{{x}^2}{2}} \qquad \brak{x \in Z}\label{9.3.8}
 \end{align}
 \begin{enumerate}[label=(\alph*)]
 \item If we consider all cards to be spades,
@@ -252,7 +248,7 @@ Z &\approx \frac{5 - \frac{5}{4}}{\sqrt{\frac{15}{16}}} \approx \sqrt{15}
 \end{align}
 Substituting values in \eqref{9.3.8},
 \begin{align}
-P_Z\brak{\sqrt{15}} &= \frac{1}{\sqrt{2\pi}} e^{-\frac{15}{2}}\\
+p_Z\brak{\sqrt{15}} &= \frac{1}{\sqrt{2\pi}} e^{-\frac{15}{2}}\\
 	           &= 0.0001245
 \end{align}
 \item If we consider 3 cards to be spades,
@@ -262,7 +258,7 @@ Z &\approx \frac{3 - \frac{5}{4}}{\sqrt{\frac{15}{16}}} \approx \frac{7}{\sqrt{1
 \end{align}
 Substituting values in \eqref{9.3.8},
 \begin{align}
-P_Z\brak{\frac{7}{\sqrt{15}}} &= \frac{1}{\sqrt{2\pi}} e^{-\frac{49}{30}}\\
+p_Z\brak{\frac{7}{\sqrt{15}}} &= \frac{1}{\sqrt{2\pi}} e^{-\frac{49}{30}}\\
 			      &= 0.044
 \end{align}
 \item If we consider 0 cards to be spades,
@@ -272,33 +268,14 @@ Z &\approx -\frac{5}{\sqrt{15}}
 \end{align}
 Substituting values in \eqref{9.3.8},
 \begin{align}
-P_Z\brak{-\frac{5}{\sqrt{15}}}&= \frac{1}{\sqrt{2\pi}} e^{-\frac{5}{6}}\\
+p_Z\brak{-\frac{5}{\sqrt{15}}}&= \frac{1}{\sqrt{2\pi}} e^{-\frac{5}{6}}\\
 			      &= 0.0978
 \end{align}
 \end{enumerate}
-\item Binomial Distribution\\
-Lets define a random variable $X$ which represents the number of spade cards drawn.
-\begin{align}
-X = \{0,1,2,3,4,5\}
-\end{align}
-The pmf is given by 
-\begin{align} 
-P_X\brak{r} &= \comb{n}{r} p^{r}(1-p)^{n-r}
-\end{align}
-\begin{enumerate}[label=(\alph*)]
-\item If we consider all cards to be spades, 
-\begin{align}
-P_X\brak{5} &= 0.00098
-\end{align}
-\item If we consider 3 cards to be spades, 
-\begin{align}
-P_X\brak{3} &= 0.08789
-\end{align}
-\item If we consider 0 cards to be spades, 
-\begin{align}
-P_X\brak{0} &= 0.23730
-\end{align}
-\end{enumerate}
+\item Gaussian vs Binomial Comparison
+\begin{table}[!ht]
+\input{tables/Comparison.tex}
+\end{table}
 \item Binomial vs Gaussian Graph\\
 \includegraphics[width=\columnwidth]{./figs/plot.pdf}
 \end{enumerate}
