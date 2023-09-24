@@ -265,6 +265,43 @@ p_Y\brak{0} &= \frac{1}{\sqrt{2\pi\brak{\frac{15}{16}}}} e^{-\frac{\brak{0 - \fr
 \end{table}
 \item Binomial vs Gaussian Graph\\
 \includegraphics[width=\columnwidth]{./figs/plot.pdf}
+\item Solving using Q function\\
+Q function is defined
+\begin{align}
+	\qfunc{x}=\int_x^{\infty}f\brak{x}dx
+\end{align}
+then CDF of $Y$ is:
+\begin{align}
+	\pr{Y<x}&=\int_{-\infty}^x f\brak{x} dx\\
+	&=1-\int_x^{\infty}f\brak{x}dx\\
+	&=1-\qfunc{x}
+\end{align}
+and for finding \pr{Z=\frac{X-\mu}{\sigma}} Using approximation,
+\begin{align}
+	\pr{Z=\frac{Y-\mu}{\sigma}} &\approx \pr{\frac{Y+0.5-\mu}{\sigma} < Z < \frac{Y-0.5-\mu}{\sigma}}\\
+	&\approx \pr{Z<\frac{Y+0.5-\mu}{\sigma}} - \pr{Z<\frac{Y-0.5-\mu}{\sigma}}\\
+	&\approx \qfunc{\frac{Y-0.5-\mu}{\sigma}} - \qfunc{\frac{Y+0.5-\mu}{\sigma}}
+\end{align}
+\begin{enumerate}
+\item 
+\begin{align}
+Y &= 5\\
+\pr{Z=3.872} &\approx \qfunc{3.356} - \qfunc{4.389}\\
+	     &\approx 0.0003888
+\end{align}
+\item 
+\begin{align}
+Y &= 3\\
+\pr{Z=1.8073} &\approx \qfunc{1.2909} - \qfunc{2.3237}\\
+	      &\approx 0.08828
+\end{align}
+\item 
+\begin{align}
+Y &= 0\\
+\pr{Z=-1.2909} &\approx \qfunc{-1.8073} - \qfunc{-0.7745}\\
+	       &\approx 0.1839
+\end{align}
+\end{enumerate}
 \end{enumerate}
 \end{document}
 
