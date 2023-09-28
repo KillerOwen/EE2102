@@ -259,49 +259,64 @@ p_Y\brak{0} &= \frac{1}{\sqrt{2\pi\brak{\frac{15}{16}}}} e^{-\frac{\brak{0 - \fr
 			       &= 0.0978
 \end{align}
 \end{enumerate}
-\item Gaussian vs Binomial Comparison
+\item Solving using Q function\\
+Consider a gaussian random variable Z,
+\begin{align}
+Z &\sim N\brak{\mu,\sigma}\\
+&\sim N\brak{\frac{5}{4},\frac{\sqrt{15}}{4}}
+\end{align}
+Due to continuity correction \pr{Y=x} can be approximated using gaussian distribution as
+\begin{align}
+	p_Z\brak{x}&\approx\pr{x-0.5<Z<x+0.5}\\
+	&\approx\pr{Z<x+0.5}-\pr{Z<x-0.5}	\\
+	&\approx F_Z\brak{x+0.5}-F_Z\brak{x-0.5}
+\end{align}
+CDF of Z is defined as:
+\begin{align}
+	F_Z\brak{x}&=\pr{Z<x}\\
+	&=\pr{\frac{Z-\mu}{\sigma}<\frac{x-\mu}{\sigma}}\\
+	\implies \frac{Z-\mu}{\sigma} &\sim N\brak{0,1}\\
+	&=1-\pr{\frac{Z-\mu}{\sigma}>\frac{x-\mu}{\sigma}}\\
+	&=\begin{cases}
+		1-\qfunc{\frac{x-\mu}{\sigma}} & x \geq \mu\\
+		\qfunc{\frac{\mu -x}{\sigma}} & x < \mu 
+	\end{cases}
+\end{align}
+Then probability in terms of Q funtion is
+\begin{align}
+	\implies p_Z\brak{x}&\approx \qfunc{\frac{\brak{x-0.5}-\mu}{\sigma}}-\qfunc{\frac{\brak{x+0.5}-\mu}{\sigma}}
+\end{align}
+\begin{enumerate}
+	\item 
+	The Gaussian approximation for \pr{Y=5} is
+	\begin{align}
+		p_Z\brak{5}&\approx \qfunc{\frac{4.5 - 1.25}{0.9375}} -\qfunc{\frac{5.5 -1.25}{0.9375}}\\
+	&\approx \qfunc{3.356} - \qfunc{4.389}\\
+	&\approx 0.0003888
+	\end{align}
+	\item 
+	The Gaussian approximation for \pr{Y=3} is
+	\begin{align}
+		p_Y\brak{3} &\approx \qfunc{\frac{2.5 - 1.25}{0.9375}} -\qfunc{\frac{3.5 -1.25}{0.9375}}\\
+	&\approx \qfunc{1.2909} - \qfunc{2.3237}\\
+	&\approx 0.08828
+	\end{align}
+	\item 
+	The Gaussian approximation for \pr{Y=0} is
+	\begin{align}
+		p_Z\brak{0}
+	&\approx \qfunc{\frac{-0.5 - 1.25}{0.9375}} -\qfunc{\frac{0.5 -1.25}{0.9375}}\\
+	&\approx \brak{1-\qfunc{1.8073}} - \brak{1-\qfunc{0.7745}}\\
+	&=\qfunc{0.7745}-\qfunc{1.8073}\\
+	&\approx 0.1839
+	\end{align}
+\end{enumerate}
+\item Gaussian vs Binomial vs Q-function Comparison
 \begin{table}[!ht]
 \input{tables/Comparison.tex}
 \end{table}
 \item Binomial vs Gaussian Graph\\
 \includegraphics[width=\columnwidth]{./figs/plot.pdf}
-\item Solving using Q function\\
-Q function is defined
-\begin{align}
-	\qfunc{x}=\int_x^{\infty}f\brak{x}dx
-\end{align}
-then CDF of $Y$ is:
-\begin{align}
-	\pr{Y<x}&=\int_{-\infty}^x f\brak{x} dx\\
-	&=1-\int_x^{\infty}f\brak{x}dx\\
-	&=1-\qfunc{x}
-\end{align}
-and for finding \pr{Z=\frac{X-\mu}{\sigma}} Using approximation,
-\begin{align}
-	\pr{Z=\frac{Y-\mu}{\sigma}} &\approx \pr{\frac{Y+0.5-\mu}{\sigma} < Z < \frac{Y-0.5-\mu}{\sigma}}\\
-	&\approx \pr{Z<\frac{Y+0.5-\mu}{\sigma}} - \pr{Z<\frac{Y-0.5-\mu}{\sigma}}\\
-	&\approx \qfunc{\frac{Y-0.5-\mu}{\sigma}} - \qfunc{\frac{Y+0.5-\mu}{\sigma}}
-\end{align}
-\begin{enumerate}
-\item 
-\begin{align}
-Y &= 5\\
-\pr{Z=3.872} &\approx \qfunc{3.356} - \qfunc{4.389}\\
-	     &\approx 0.0003888
-\end{align}
-\item 
-\begin{align}
-Y &= 3\\
-\pr{Z=1.8073} &\approx \qfunc{1.2909} - \qfunc{2.3237}\\
-	      &\approx 0.08828
-\end{align}
-\item 
-\begin{align}
-Y &= 0\\
-\pr{Z=-1.2909} &\approx \qfunc{-1.8073} - \qfunc{-0.7745}\\
-	       &\approx 0.1839
-\end{align}
-\end{enumerate}
 \end{enumerate}
 \end{document}
 
