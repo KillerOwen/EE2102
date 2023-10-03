@@ -24,7 +24,8 @@
 \usepackage{calc}                                             
 \usepackage{multirow}                                         
 \usepackage{hhline}                                           
-\usepackage{ifthen}                                           
+\usepackage{ifthen}  
+\usepackage{float}                                         
 %
 %\usepackage{setspace}
 %\usepackage{gensymb}
@@ -109,12 +110,10 @@
 
 \title{
 %	\logo{
-Solution of question 9.3.8
+Question ST 33.2023
 %	}
 }
-\author{ Gagan Singla - EE22BTECH11021
-	
-}	
+\author{Gagan Singla - EE22BTECH11021}	
 %\title{
 %	\logo{Matrix Analysis through Octave}{\begin{center}\includegraphics[scale=.24]{tlc}\end{center}}{}{HAMDSP}
 %}
@@ -192,125 +191,65 @@ Solution of question 9.3.8
 \renewcommand{\thetable}{\theenumi}
 %\renewcommand{\theequation}{\theenumi}
 
-%\begin{abstract}
-%%\boldmath
-%In this letter, an algorithm for evaluating the exact analytical bit error rate  (BER)  for the piecewise linear (PL) combiner for  multiple relays is presented. Previous results were available only for upto three relays. The algorithm is unique in the sense that  the actual mathematical expressions, that are prohibitively large, need not be explicitly obtained. The diversity gain due to multiple relays is shown through plots of the analytical BER, well supported by simulations. 
-%
-%\end{abstract}
-% IEEEtran.cls defaults to using nonbold math in the Abstract.
-% This preserves the distinction between vectors and scalars. However,
-% if the journal you are submitting to favors bold math in the abstract,
-% then you can use LaTeX's standard command \boldmath at the very start
-% of the abstract to achieve this. Many IEEE journals frown on math
-% in the abstract anyway.
-
-% Note that keywords are not normally used for peerreview papers.
-%\begin{IEEEkeywords}
-%Cooperative diversity, decode and forward, piecewise linear
-%\end{IEEEkeywords}
-
-Question: Five cards are drawn successively with replacement from a well-shuffled deck of 52 cards. What is the probability that
-\begin{enumerate}[label=(\alph*)]
-\item all the five cards are spades?
-\item only 3 cards are spades?
-\item none is a spade?
-\end{enumerate}
+Question: Let $\{W_t\}_{t \geq 0}$ be a standard Brownian motion. Then $E\brak{\left.{W_4}^2\right | W_2=2}$ in integer equals
 
 \solution
-Let us define:
-\begin{table}[!ht]
-\input{tables/Book1.tex}
+\begin{table}[H]
+\input{tables/table.tex}
 \end{table}
-\begin{enumerate}[label=(\roman*)]
-\item {Gaussian Distribution}\\
-The gaussian distribution function is defined as:
+In standard brownian motion, 
 \begin{align}
-p_Y\brak{x} &= \frac{1}{\sqrt{2\pi{\sigma}^2}} e^{-\frac{\brak{x-\mu}^2}{2{\sigma}^2}}\label{9.3.8} \qquad \brak{x \in Y}
+W_i &\sim N\brak{0,i}\\
+Cov\brak{W_i,W_j} &= min\brak{i,j} 
 \end{align}
-If we consider all cards to be spades,
+Now, we know that,
 \begin{align}
-Y &= 5
+E\brak{\left.Y^2\right | X} = Var\brak{\left.Y\right | X} + \brak{E\brak{\left.Y\right | X}}^2 \label{33.2023}
 \end{align}
-Substituting values in \eqref{9.3.8},
+These are defined as:
 \begin{align}
-p_Y\brak{5} &= \frac{1}{\sqrt{2\pi\brak{\frac{15}{16}}}} e^{-\frac{\brak{5 - \frac{5}{4}}^2}{2\brak{\frac{15}{16}}}}\\
-		   &= \frac{1}{\sqrt{2\pi\brak{\frac{15}{16}}}} e^{-\frac{15}{2}}\\
-	           &= 0.0001245
+E\brak{\left.Y\right | X=x} &= \mu_Y +\rho\brak{\frac{\sigma_Y}{\sigma_X}}\brak{x - \mu_X}\\
+Var\brak{\left.Y\right | X=x} &= \brak{1 - {\rho}^2}{\sigma_Y}^2
 \end{align}
-If we consider 3 cards to be spades,
+The Co-Relation Coefficiant is given by:
 \begin{align}
-Y &= 3
+\rho = \frac{Cov\brak{X,Y}}{\sqrt{Var\brak{X}Var\brak{Y}}}  
 \end{align}
-Substituting values in \eqref{9.3.8},
+In our case, 
 \begin{align}
-p_Y\brak{3} &= \frac{1}{\sqrt{2\pi\brak{\frac{15}{16}}}} e^{-\frac{\brak{3 - \frac{5}{4}}^2}{2\brak{\frac{15}{16}}}}\\
-			      &= \frac{1}{\sqrt{2\pi\brak{\frac{15}{16}}}} e^{-\frac{49}{30}}\\
-			      &= 0.044
+Y &= W_4\\
+X &= W_2\\
+x &= 2
 \end{align}
-If we consider 0 cards to be spades,
+Hence, we get that,
 \begin{align}
-Y &= 0
-\end{align}
-Substituting values in \eqref{9.3.8},
+\mu_X = \mu_Y &= 0\\ 
+\sigma_X &= \sqrt{Var\brak{X}}\\
+	 &= \sqrt{2}\\
+\sigma_Y &= \sqrt{Var\brak{Y}}\\
+	 &= \sqrt{4}\\
+	 &= 2\\
+\rho &= \frac{min\brak{2,4}}{\sqrt{2*4}}\\
+     &= \frac{2}{\sqrt{8}}\\
+     &= \frac{1}{\sqrt{2}}
+\end{align} 
+Substituting the values in above equations,
 \begin{align}
-p_Y\brak{0} &= \frac{1}{\sqrt{2\pi\brak{\frac{15}{16}}}} e^{-\frac{\brak{0 - \frac{5}{4}}^2}{2\brak{\frac{15}{16}}}}\\
-			       &= \frac{1}{\sqrt{2\pi\brak{\frac{15}{16}}}} e^{-\frac{5}{6}}\\
-			       &= 0.0978
+E\brak{\left.Y\right | X=2} &= \frac{1}{\sqrt{2}}\cdot\frac{2}{\sqrt{2}}\cdot 2\\
+			    &= 2\\
+Var\brak{\left.Y\right | X=2} &= \brak{1 - \frac{1}{2}}\brak{2}^2\\
+			      &= \frac{1}{2}\cdot 4\\
+			      &= 2\\
 \end{align}
-\item Solving using Q function\\
-Consider a gaussian random variable Z,
+Substituting these values in \eqref{33.2023},
 \begin{align}
-Z &\sim N\brak{\mu,\sigma}\\
-&\sim N\brak{\frac{5}{4},\frac{\sqrt{15}}{4}}
+E\brak{\left.Y^2\right | X=2} &= 2 + \brak{2}^2\\
+			      &= 6
 \end{align}
-Due to continuity correction \pr{Y=x} can be approximated using gaussian distribution as
+Hence, the answer of this question is:
 \begin{align}
-	p_Z\brak{x}&\approx\pr{x-0.5<Z<x+0.5}\\
-	&\approx\pr{Z<x+0.5}-\pr{Z<x-0.5}	\\
-	&\approx F_Z\brak{x+0.5}-F_Z\brak{x-0.5}
+E\brak{\left.{W_4}^2\right | W_2=2} &= 6
 \end{align}
-CDF of Z is defined as:
-\begin{align}
-	F_Z\brak{x}&=\pr{Z<x}\\
-	&=\pr{\frac{Z-\mu}{\sigma}<\frac{x-\mu}{\sigma}}\\
-	\implies \frac{Z-\mu}{\sigma} &\sim N\brak{0,1}\\
-	&=1-\pr{\frac{Z-\mu}{\sigma}>\frac{x-\mu}{\sigma}}\\
-	&=\begin{cases}
-		1-\qfunc{\frac{x-\mu}{\sigma}} & x \geq \mu\\
-		\qfunc{\frac{\mu -x}{\sigma}} & x < \mu 
-	\end{cases}
-\end{align}
-Then probability in terms of Q funtion is
-\begin{align}
-	\implies p_Z\brak{x}&\approx \qfunc{\frac{\brak{x-0.5}-\mu}{\sigma}}-\qfunc{\frac{\brak{x+0.5}-\mu}{\sigma}}
-\end{align}
-	The Gaussian approximation for \pr{Y=5} is
-	\begin{align}
-		p_Z\brak{5}&\approx \qfunc{\frac{4.5 - 1.25}{0.9375}} -\qfunc{\frac{5.5 -1.25}{0.9375}}\\
-	&\approx \qfunc{3.356} - \qfunc{4.389}\\
-	&\approx 0.0003888
-	\end{align}
-	The Gaussian approximation for \pr{Y=3} is
-	\begin{align}
-		p_Y\brak{3} &\approx \qfunc{\frac{2.5 - 1.25}{0.9375}} -\qfunc{\frac{3.5 -1.25}{0.9375}}\\
-	&\approx \qfunc{1.2909} - \qfunc{2.3237}\\
-	&\approx 0.08828
-	\end{align} 
-	The Gaussian approximation for \pr{Y=0} is
-	\begin{align}
-		p_Z\brak{0}
-	&\approx \qfunc{\frac{-0.5 - 1.25}{0.9375}} -\qfunc{\frac{0.5 -1.25}{0.9375}}\\
-	&\approx \brak{1-\qfunc{1.8073}} - \brak{1-\qfunc{0.7745}}\\
-	&=\qfunc{0.7745}-\qfunc{1.8073}\\
-	&\approx 0.1839
-	\end{align}
-\item Gaussian vs Binomial vs Q-function Comparison
-\begin{table}[!ht]
-\input{tables/Comparison.tex}
-\end{table}
-\item Binomial vs Gaussian Graph\\
-\includegraphics[width=\columnwidth]{./figs/plot.pdf}
-\end{enumerate}
 \end{document}
 
 
