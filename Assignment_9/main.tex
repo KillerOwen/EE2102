@@ -200,13 +200,36 @@ Question: Let $\{W_t\}_{t \geq 0}$ be a standard Brownian motion. Then $E\brak{\
 In standard brownian motion, 
 \begin{align}
 W_i &\sim N\brak{0,i}\\
-Cov\brak{W_i,W_j} &= min\brak{i,j} 
+Cov\brak{W_i,W_j} &= \min\brak{i,j} 
 \end{align}
 Now, we know that,
 \begin{align}
 E\brak{\left.Y^2\right | X} = Var\brak{\left.Y\right | X} + \brak{E\brak{\left.Y\right | X}}^2 \label{33.2023}
 \end{align}
-These are defined as:
+$X$ and $Y$ can be represented as:
+\begin{align}
+X &= \sigma_xZ_1 + \mu_x\\
+Y &= \sigma_y\brak{{\rho}Z_1 + \sqrt{1-{\rho}^2}Z_2} + \mu_Y
+\end{align}
+where $Z_1$ and $Z_2$ are normal distributions.
+\begin{align}
+Z_1, Z_2 \sim N\brak{0,1}
+\end{align}
+Substituting value of $Z_1$ in $Y$,
+\begin{align}
+Y &= \sigma_Y\rho\brak{\frac{x - \mu_X}{\sigma_x}} + \sigma_Y\sqrt{1 - {\rho}^2}Z_2 + \mu_Y
+\end{align}
+This an equation of $Y$ in terms of x. All the terms except $Z_2$ are constants. Taking expectation and variance on both sides, 
+\begin{align}
+E\brak{\left.Y\right | X=x} &= \mu_Y +\rho\brak{\frac{\sigma_Y}{\sigma_X}}\brak{x - \mu_X} + \sigma_Y\sqrt{1 - {\rho}^2}E\brak{Z_2}\\
+Var\brak{\left.Y\right | X=x} &= {\brak{1 - {\rho}^2}{\sigma_Y}^2}Var\brak{Z_2}
+\end{align}
+Variance of constants terms is 0. $Z_2$ is a normal distribution so,
+\begin{align}
+E\brak{Z_2} &= 0\\
+Var\brak{Z_2} &= 1
+\end{align}
+By substituting these values in above equations,
 \begin{align}
 E\brak{\left.Y\right | X=x} &= \mu_Y +\rho\brak{\frac{\sigma_Y}{\sigma_X}}\brak{x - \mu_X}\\
 Var\brak{\left.Y\right | X=x} &= \brak{1 - {\rho}^2}{\sigma_Y}^2
@@ -229,7 +252,7 @@ Hence, we get that,
 \sigma_Y &= \sqrt{Var\brak{Y}}\\
 	 &= \sqrt{4}\\
 	 &= 2\\
-\rho &= \frac{min\brak{2,4}}{\sqrt{2*4}}\\
+\rho &= \frac{\min\brak{2,4}}{\sqrt{2\times 4}}\\
      &= \frac{2}{\sqrt{8}}\\
      &= \frac{1}{\sqrt{2}}
 \end{align} 
