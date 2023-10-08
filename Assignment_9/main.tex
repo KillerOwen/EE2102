@@ -204,22 +204,86 @@ Cov\brak{W_i,W_j} &= \min\brak{i,j}
 \end{align}
 Now, we know that,
 \begin{align}
-E\brak{\left.Y^2\right | X} = Var\brak{\left.Y\right | X} + \brak{E\brak{\left.Y\right | X}}^2 \label{33.2023}
+E\brak{\left.Y^2\right | X} = Var\brak{\left.Y\right | X} + \brak{E\brak{\left.Y\right | X}}^2 \label{33.2023.1}
 \end{align}
 $X$ and $Y$ can be represented as:
 \begin{align}
-X &= \sigma_xZ_1 + \mu_x\\
-Y &= \sigma_y\brak{{\rho}Z_1 + \sqrt{1-{\rho}^2}Z_2} + \mu_Y
+X &= \sigma_XZ_1 + \mu_X\\
+Y &= \sigma_Y\brak{{\rho}Z_1 + \sqrt{1-{\rho}^2}Z_2} + \mu_Y
 \end{align}
 where $Z_1$ and $Z_2$ are normal distributions.
 \begin{align}
 Z_1, Z_2 \sim N\brak{0,1}
 \end{align}
+Writing the above equations in matrix form,
+\begin{align}
+\myvec{X\\Y} = 
+\begin{bmatrix}
+    \sigma_X & 0 \\
+    \sigma_Y\rho & \sigma_Y\sqrt{1-{\rho}^2} \\
+\end{bmatrix}
+\myvec{Z_1\\Z_2} + \myvec{\mu_X\\\mu_Y}
+\end{align}
+This can be represented as,
+\begin{align}
+\vec{x} = A\vec{z} + \vec{c}
+\end{align}
+Taking expectation both sides,
+\begin{align}
+E\brak{\vec{x}} &= E\brak{A\vec{z} + \vec{c}}\\
+		&= AE\brak{\vec{z}} + E\brak{\vec{c}}\\
+		&= \vec{c}
+\end{align}
+We know that covariance matrix for $X$ and $Y$ is given by:
+\begin{align}
+Cov\brak{X,Y} &= E\brak{\brak{\vec{x}-\vec{c}}\brak{\vec{x}-\vec{c}}^T}\\
+	      &= E\brak{\brak{A\vec{z}}\brak{A\vec{z}}^T}\\
+	      &= E\brak{A\vec{z}\vec{z}^TA^T}\\
+	      &= AE\brak{\vec{z}\vec{z}^T}A^T
+\end{align}
+Multiplying $\vec{z}$ and $\vec{z}^T$ we get,
+\begin{align}
+\vec{z}\vec{z}^T &= \myvec{Z_1\\Z_2}\myvec{Z_1&Z_2}\\
+		 &= \myvec{{Z_1}^2&Z_1Z_2\\Z_1Z_2&{Z_2}^2}\label{33.2023.2}
+\end{align}
+We know that, 
+\begin{align}
+Var\brak{Z_1} &= E\brak{\brak{Z_1-\mu}^2}\\
+E\brak{Z_1^2} &= 1
+\end{align}
+Same goes for $Z_2$ as $Z_1$ and $Z_2$ are both normal distributions.\\ 
+Taking expectation both sides in equation \eqref{33.2023.2},
+\begin{align}
+E\brak{\vec{z}\vec{z}^T} &= \myvec{E\brak{Z_1^2}&E\brak{Z_1Z_2}\\E\brak{Z_1Z_2}&E\brak{Z_2^2}}\\
+			 &= \myvec{1&0\\0&1}
+\end{align}
+Hence,
+\begin{align}
+Cov\brak{X,Y} &= AA^T\\
+	      &= 
+\begin{bmatrix}
+    \sigma_X & 0 \\
+    \sigma_Y\rho & \sigma_Y\sqrt{1-{\rho}^2} \\
+\end{bmatrix}
+\begin{bmatrix}
+    \sigma_X & \sigma_Y\rho \\
+    0 & \sigma_Y\sqrt{1-{\rho}^2} \\
+\end{bmatrix}\\
+	      &= 
+\begin{bmatrix}
+\brak{\sigma_X}^2 & \sigma_X\sigma_Y\rho \\
+\sigma_X\sigma_Y\rho & \brak{\sigma_Y}^2 \\
+\end{bmatrix}
+\end{align}
+The Co-Relation Coefficiant is given by:
+\begin{align}
+\rho = \frac{Cov\brak{X,Y}}{\sqrt{Var\brak{X}Var\brak{Y}}}  
+\end{align}
 Substituting value of $Z_1$ in $Y$,
 \begin{align}
-Y &= \sigma_Y\rho\brak{\frac{x - \mu_X}{\sigma_x}} + \sigma_Y\sqrt{1 - {\rho}^2}Z_2 + \mu_Y
+Y &= \sigma_Y\rho\brak{\frac{X - \mu_X}{\sigma_X}} + \sigma_Y\sqrt{1 - {\rho}^2}Z_2 + \mu_Y
 \end{align}
-This an equation of $Y$ in terms of x. All the terms except $Z_2$ are constants. Taking expectation and variance on both sides, 
+This an equation of $Y$ in terms of $X$. All the terms except $Z_2$ are constants. Taking expectation and variance on both sides, 
 \begin{align}
 E\brak{\left.Y\right | X=x} &= \mu_Y +\rho\brak{\frac{\sigma_Y}{\sigma_X}}\brak{x - \mu_X} + \sigma_Y\sqrt{1 - {\rho}^2}E\brak{Z_2}\\
 Var\brak{\left.Y\right | X=x} &= {\brak{1 - {\rho}^2}{\sigma_Y}^2}Var\brak{Z_2}
@@ -234,10 +298,6 @@ By substituting these values in above equations,
 E\brak{\left.Y\right | X=x} &= \mu_Y +\rho\brak{\frac{\sigma_Y}{\sigma_X}}\brak{x - \mu_X}\\
 Var\brak{\left.Y\right | X=x} &= \brak{1 - {\rho}^2}{\sigma_Y}^2
 \end{align}
-The Co-Relation Coefficiant is given by:
-\begin{align}
-\rho = \frac{Cov\brak{X,Y}}{\sqrt{Var\brak{X}Var\brak{Y}}}  
-\end{align}
 In our case, 
 \begin{align}
 Y &= W_4\\
@@ -247,13 +307,9 @@ x &= 2
 Hence, we get that,
 \begin{align}
 \mu_X = \mu_Y &= 0\\ 
-\sigma_X &= \sqrt{Var\brak{X}}\\
-	 &= \sqrt{2}\\
-\sigma_Y &= \sqrt{Var\brak{Y}}\\
-	 &= \sqrt{4}\\
-	 &= 2\\
-\rho &= \frac{\min\brak{2,4}}{\sqrt{2\times 4}}\\
-     &= \frac{2}{\sqrt{8}}\\
+\sigma_X &= \sqrt{2}\\
+\sigma_Y &= 2\\
+\rho &= \frac{2}{\sqrt{8}}\\
      &= \frac{1}{\sqrt{2}}
 \end{align} 
 Substituting the values in above equations,
@@ -264,7 +320,7 @@ Var\brak{\left.Y\right | X=2} &= \brak{1 - \frac{1}{2}}\brak{2}^2\\
 			      &= \frac{1}{2}\cdot 4\\
 			      &= 2\\
 \end{align}
-Substituting these values in \eqref{33.2023},
+Substituting these values in \eqref{33.2023.1},
 \begin{align}
 E\brak{\left.Y^2\right | X=2} &= 2 + \brak{2}^2\\
 			      &= 6
