@@ -3,7 +3,7 @@
 \let\negthickspace\undefined
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
 \usepackage{cite}
-\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{amsmath,amssymb,amsfonts,amsthm,bm}
 \usepackage{algorithmic}
 \usepackage{graphicx}
 \usepackage{textcomp}
@@ -226,17 +226,17 @@ Writing the above equations in matrix form,
 \end{align}
 This can be represented as,
 \begin{align}
-\vec{x} = A\vec{z} + \vec{c}
+\vec{x} = A\vec{z} + \bm{\mu}
 \end{align}
 Taking expectation both sides,
 \begin{align}
-E\brak{\vec{x}} &= E\brak{A\vec{z} + \vec{c}}\\
-		&= AE\brak{\vec{z}} + E\brak{\vec{c}}\\
-		&= \vec{c}
+E\brak{\vec{x}} &= E\brak{A\vec{z} + \bm{\mu}}\\
+		&= AE\brak{\vec{z}} + E\brak{\bm{\mu}}\\
+		&= \bm{\mu}
 \end{align}
 We know that covariance matrix for $X$ and $Y$ is given by:
 \begin{align}
-Cov\brak{X,Y} &= E\brak{\brak{\vec{x}-\vec{c}}\brak{\vec{x}-\vec{c}}^T}\\
+\bm{\sigma} &= E\brak{\brak{\vec{x}-\vec{\mu}}\brak{\vec{x}-\vec{\mu}}^T}\\
 	      &= E\brak{\brak{A\vec{z}}\brak{A\vec{z}}^T}\\
 	      &= E\brak{A\vec{z}\vec{z}^TA^T}\\
 	      &= AE\brak{\vec{z}\vec{z}^T}A^T
@@ -259,7 +259,7 @@ E\brak{\vec{z}\vec{z}^T} &= \myvec{E\brak{Z_1^2}&E\brak{Z_1Z_2}\\E\brak{Z_1Z_2}&
 \end{align}
 Hence,
 \begin{align}
-Cov\brak{X,Y} &= AA^T\\
+\bm{\sigma} &= AA^T\\
 	      &= 
 \begin{bmatrix}
     \sigma_X & 0 \\
