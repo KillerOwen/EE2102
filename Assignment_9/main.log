@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.8.2)  11 OCT 2023 12:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.8.2)  11 OCT 2023 12:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2147,12 +2147,6 @@ ine 333.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 333.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 333.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 333.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 333.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 339.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
 ine 339.
@@ -2189,8 +2183,8 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29689 strings out of 478287
- 583551 string characters out of 5849290
+ 29688 strings out of 478287
+ 583538 string characters out of 5849290
  885903 words of memory out of 5000000
  47176 multiletter control sequences out of 15000+600000
  542636 words of font info for 184 fonts, out of 8000000 for 9000
@@ -2204,10 +2198,10 @@ lic/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/
 txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (2 pages, 63692 bytes).
+Output written on main.pdf (2 pages, 63677 bytes).
 PDF statistics:
- 130 PDF objects out of 1000 (max. 8388607)
- 108 compressed objects within 2 object streams
- 57 named destinations out of 1000 (max. 500000)
+ 129 PDF objects out of 1000 (max. 8388607)
+ 107 compressed objects within 2 object streams
+ 56 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
