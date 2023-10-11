@@ -236,7 +236,7 @@ E\brak{\vec{x}} &= E\brak{A\vec{z} + \bm{\mu}}\\
 \end{align}
 We know that covariance matrix for $X$ and $Y$ is given by:
 \begin{align}
-\bm{\sigma} &= E\brak{\brak{\vec{x}-\vec{\mu}}\brak{\vec{x}-\vec{\mu}}^T}\\
+\sigma_\vec{z} &= E\brak{\brak{\vec{x}-\vec{\mu}}\brak{\vec{x}-\vec{\mu}}^T}\\
 	      &= E\brak{\brak{A\vec{z}}\brak{A\vec{z}}^T}\\
 	      &= E\brak{A\vec{z}\vec{z}^TA^T}\\
 	      &= AE\brak{\vec{z}\vec{z}^T}A^T
@@ -259,7 +259,7 @@ E\brak{\vec{z}\vec{z}^T} &= \myvec{E\brak{Z_1^2}&E\brak{Z_1Z_2}\\E\brak{Z_1Z_2}&
 \end{align}
 Hence,
 \begin{align}
-\bm{\sigma} &= AA^T\\
+\sigma_\vec{z} &= AA^T\\
 	      &= 
 \begin{bmatrix}
     \sigma_X & 0 \\
@@ -283,12 +283,23 @@ Substituting value of $Z_1$ in $Y$,
 \begin{align}
 Y &= \sigma_Y\rho\brak{\frac{X - \mu_X}{\sigma_X}} + \sigma_Y\sqrt{1 - {\rho}^2}Z_2 + \mu_Y
 \end{align}
-This an equation of $Y$ in terms of $X$. All the terms except $Z_2$ are constants. Taking expectation and variance on both sides, 
+This an equation of $Y$ in terms of $X$. All the terms except $Z_2$ are constants. Taking expectation on both sides, 
 \begin{align}
-E\brak{\left.Y\right | X=x} &= \mu_Y +\rho\brak{\frac{\sigma_Y}{\sigma_X}}\brak{x - \mu_X} + \sigma_Y\sqrt{1 - {\rho}^2}E\brak{Z_2}\\
-Var\brak{\left.Y\right | X=x} &= {\brak{1 - {\rho}^2}{\sigma_Y}^2}Var\brak{Z_2}
+E\brak{\left.Y\right | X=x} &= E\brak{\sigma_Y\rho\brak{\frac{x - \mu_X}{\sigma_X}} + \sigma_Y\sqrt{1 - {\rho}^2}Z_2 + \mu_Y}\\
+			    &= E\brak{\sigma_Y\rho\brak{\frac{x - \mu_X}{\sigma_X}} + \mu_Y} + E\brak{\sigma_Y\sqrt{1 - {\rho}^2}Z_2}\\
+			    &= \mu_Y +\rho\brak{\frac{\sigma_Y}{\sigma_X}}\brak{x - \mu_X} + \sigma_Y\sqrt{1 - {\rho}^2}E\brak{Z_2}
 \end{align}
-Variance of constants terms is 0. $Z_2$ is a normal distribution so,
+Now for variance,
+\begin{align}
+Var\brak{\left.Y\right | X=x} &= Var\brak{\sigma_Y\rho\brak{\frac{x - \mu_X}{\sigma_X}} + \sigma_Y\sqrt{1 - {\rho}^2}Z_2 + \mu_Y}\\
+			      &= Var\brak{\sigma_Y\rho\brak{\frac{x - \mu_X}{\sigma_X}} + \mu_Y} + Var\brak{\sigma_Y\sqrt{1 - {\rho}^2}Z_2}
+\end{align}
+Variance of constants terms is 0.
+\begin{align}		      
+Var\brak{\left.Y\right | X=x} &= Var\brak{\sigma_Y\sqrt{1 - {\rho}^2}Z_2}\\
+			      &= {\brak{1 - {\rho}^2}{\sigma_Y}^2}Var\brak{Z_2}
+\end{align}
+$Z_2$ is a normal distribution so,
 \begin{align}
 E\brak{Z_2} &= 0\\
 Var\brak{Z_2} &= 1
@@ -323,10 +334,7 @@ Var\brak{\left.Y\right | X=2} &= \brak{1 - \frac{1}{2}}\brak{2}^2\\
 Substituting these values in \eqref{33.2023.1},
 \begin{align}
 E\brak{\left.Y^2\right | X=2} &= 2 + \brak{2}^2\\
-			      &= 6
-\end{align}
-Hence, the answer of this question is:
-\begin{align}
+			      &= 6\\
 E\brak{\left.{W_4}^2\right | W_2=2} &= 6
 \end{align}
 \end{document}
