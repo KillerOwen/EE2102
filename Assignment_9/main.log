@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.8.2)  15 OCT 2023 20:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.8.2)  19 OCT 2023 11:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2188,19 +2188,65 @@ Underfull \hbox (badness 10000) in paragraph at lines 339--343
 
  []
 
-LaTeX Font Info:    Undo math alphabet allocation in version normal on input li
-ne 345.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input l
-ine 345.
+ine 343.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 343.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 351.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 351.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 351.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 351.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 351.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 351.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 351.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 351.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 351.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 351.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 351.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 351.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 351.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 351.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 351.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 351.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 351.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 351.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 352.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 352.
 LaTeX Font Info:    Undo math alphabet allocation in version normal on input li
-ne 346.
+ne 355.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input li
+ne 356.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input l
+ine 356.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input li
+ne 357.
 [2] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29694 strings out of 478287
- 583608 string characters out of 5849290
+ 29703 strings out of 478287
+ 583697 string characters out of 5849290
  885903 words of memory out of 5000000
  47178 multiletter control sequences out of 15000+600000
  542636 words of font info for 184 fonts, out of 8000000 for 9000
@@ -2214,10 +2260,10 @@ lic/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/
 txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (2 pages, 64053 bytes).
+Output written on main.pdf (2 pages, 65119 bytes).
 PDF statistics:
- 133 PDF objects out of 1000 (max. 8388607)
- 111 compressed objects within 2 object streams
- 60 named destinations out of 1000 (max. 500000)
+ 144 PDF objects out of 1000 (max. 8388607)
+ 122 compressed objects within 2 object streams
+ 69 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

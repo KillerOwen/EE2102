@@ -340,10 +340,21 @@ E\brak{\left.{W_4}^2\right | W_2=2} &= 6
 \newline\newline\newline
 Steps for Simulation:
 \begin{enumerate}
-\item Make three 2-D arrays for Matrices and Vectors
+\item Write functions to generate two normal distributions $Z_1$ and $Z_2$ using box muller method.
+\item Assume values of constants,
+\begin{align}
+\sigma_X = 0.5\\
+\sigma_Y = 0.8\\
+\rho = 0.5\\
+\mu_X = 1\\
+\mu_Y = 1.5
+\end{align}
+\item Run the functions to generate $Z_1$ and $Z_2$ 10000 times, and store all the outputs in a temporary array of size 2x10000.
+\item Make three 2-D arrays for Matrices and Vectors using the above assumed values.
 \item The dimension for matrix is 2x2 and the vector 1x2
-\item Mulitply the A matrix with $\vec{z}$ and add the $\bm{\mu}$
-\item The resultant gives you $\vec{x}$
+\item For every iteration, assign values of one column of the temporary array to $\vec{z}$.
+\item Mulitply the A matrix with $\vec{z}$ and add to $\bm{\mu}$.
+\item The resultant gives you $\vec{x}$.
 \end{enumerate}
 
 \end{document}
