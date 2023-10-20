@@ -340,10 +340,13 @@ E\brak{\left.{W_4}^2\right | W_2=2} &= 6
 \newline\newline\newline
 Steps for Simulation:
 \begin{enumerate}
+\item Set the number of samples to be generated as 10000
 \item Write a function to generate a uniform distribution
 \item Write a function to generate a normal distribution by using the uniform distribution function defined above through box muller method
-\item Set the number of samples to be generated as 10000
-\item Make a temoparary 2D array(dist) of size 2x10000 to store the values of $Z_1$ and $Z_2$ obtained after calling the normal distribution function
+\item Write a function to generate value of $\vec{z}$ from one the column of the dist matrix
+\item Write a function to calculate $\vec{x}$ by matrix multiplication: $\vec{x} = A\vec{z} + \vec{u}$.
+\item Write a function to store values of each vector $\vec{x}$ obtained in a 2D array of size 2*numsamples
+\item Make a temporary 2D array(dist) of size 2x10000 to store the values of $Z_1$ and $Z_2$ obtained after calling the normal distribution function
 \item Use a for loop to store the values obtained by calling the normal function multiple times 
 \item 
 \item Assume values for constants,
@@ -354,12 +357,11 @@ Steps for Simulation:
 \mu_X = 1\\
 \mu_Y = 1.5
 \end{align}
-\item Create $A$ matrix and vector $\bm{\mu}$ and fill the values assumed above in these
-\item Create a vector $\vec{z}$ to store the values of $Z_1$ and $Z_2$ for a single iteration, the dimension for matrix is 2x2 and the vector 1x2
+\item Create $A$ matrix and vector $\bm{\mu}$ and fill the values assumed above in these, the dimension for matrix is 2x2 and the vector 2x1
 \item Make a 2D array(ans) to store the final values of $\vec{x}$ obtained after matrix multiplication
-\item For each iteration, assign values from one of the columns from dist to $\vec{z}$ 
-\item For every iteration, assign values of one column of the temporary array to $\vec{z}$.
-\item Store the values obtained from matrix multiplication in the ans array
+\item For each iteration, create a $\vec{z}$ assign values from one of the columns from dist to $\vec{z}$ using the function defined above
+\item For each iteration, Generate $\vec{x}$  vector and call the function to solve to matrix multiplication and give value for $\vec{x}$  
+\item Store the values obtained from matrix multiplication in the ans array using the store function defined above 
 \item The ans array has the values of $\vec{x}$ for 10000 simulations.
 \end{enumerate}
 
