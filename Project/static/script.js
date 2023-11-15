@@ -2,8 +2,9 @@ const audioPlayer = document.getElementById('audio-player');
 const shuffleButton = document.getElementById('shuffle-button');
 const queueButton = document.getElementById('queue-button');
 const nextButton = document.getElementById('next-button');
-const prevButton = document.getElementById('prev-button'); // Add this line
+const prevButton = document.getElementById('prev-button');
 const listOfSongs = document.getElementById('list-of-songs');
+const currentSongElement = document.getElementById('current-song'); // Add this line
 
 let shuffledSongs = [];
 let currentSongIndex = 0;
@@ -17,8 +18,7 @@ queueButton.addEventListener('click', function () {
 });
 
 nextButton.addEventListener('click', playNextSong);
-
-prevButton.addEventListener('click', playPrevSong); // Add this line
+prevButton.addEventListener('click', playPrevSong);
 
 // Initially, load and play the first song
 fetchAndPlay('/shuffle');
@@ -40,6 +40,10 @@ function fetchAndPlay(endpoint) {
       audioPlayer.src = songPath;
       audioPlayer.play();
       updateCurrentSongIndex(data.song);
+
+      // Update the displayed current song name
+      const currentSongName = data.song.replace(/\.mp3$/, '');
+      currentSongElement.textContent = `Now Playing: ${currentSongName}`;
     })
     .catch(error => console.error('Error:', error));
 }
@@ -66,6 +70,10 @@ function playNextSong() {
   const songPath = `audio/${nextSong}`;
   audioPlayer.src = songPath;
   audioPlayer.play();
+
+  // Update the displayed current song name
+  const nextSongName = nextSong.replace(/\.mp3$/, '');
+  currentSongElement.textContent = `Now Playing: ${nextSongName}`;
 }
 
 function playPrevSong() {
@@ -74,6 +82,10 @@ function playPrevSong() {
   const songPath = `audio/${prevSong}`;
   audioPlayer.src = songPath;
   audioPlayer.play();
+
+  // Update the displayed current song name
+  const prevSongName = prevSong.replace(/\.mp3$/, '');
+  currentSongElement.textContent = `Now Playing: ${prevSongName}`;
 }
 
 function updateCurrentSongIndex(song) {

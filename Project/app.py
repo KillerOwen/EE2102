@@ -22,24 +22,24 @@ def download_file(filename):
 @app.route('/shuffle')
 def shuffle():
     random_song = random.choice(songs)
-    return jsonify({'song': random_song})
+    return jsonify({'song': random_song, 'song_name': os.path.splitext(random_song)[0]})
 
 @app.route('/queue')
 def queue():
     global current_song_index
     next_song = songs[current_song_index]
     current_song_index = (current_song_index + 1) % len(songs)
-    return jsonify({'song': next_song})
+    return jsonify({'song': next_song, 'song_name': os.path.splitext(next_song)[0]})
 
 @app.route('/next-song')
 def next_song():
     next_song = songs.pop(0) if songs else None
-    return jsonify({'song': next_song})
+    return jsonify({'song': next_song, 'song_name': os.path.splitext(next_song)[0]})
 
 @app.route('/prev-song')
 def prev_song():
     prev_song = songs.pop() if songs else None
-    return jsonify({'song': prev_song})
+    return jsonify({'song': prev_song, 'song_name': os.path.splitext(prev_song)[0]})
 
 @app.route('/song-list')
 def get_song_list():
